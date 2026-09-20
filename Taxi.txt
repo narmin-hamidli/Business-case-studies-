@@ -1,0 +1,80 @@
+Case
+
+Taxi segment — bonus earn/burn
+Total bonus earn and burn across the platform dropped 15% month-over-month. 
+The product team's first read: "the new bonus campaign in the taxi segment underperformed, so fewer bonuses were earned and burned." 
+Taxi is one of several verticals (food delivery, grocery, micromobility) sharing the same wallet and bonus pool.
+Question: is the taxi campaign really the driver, or could this be a segment-mix, seasonality, or total-turnover effect? 
+What would you check first, second, third?
+
+Answer
+
+1- Firstly, if taxi segment earn and burn both decrease at the same time it shows there is problem on taxi segment itself. 
+Because only earn or only burn decrease shows not segment but general problems. 
+For ex, when burn decrease we can check people balance amount on current month. 
+Why - because less balance means less burn opportunity. However, here we see both burn and earn dropped
+- so firstly check taxi total turnover from month to month. If it also decrease it can be sign for seasonality on taxi segment. 
+We should check last year's performance. If metrics also dropped from month to month on previous year, 
+it means we already have significant argument for our hypothesis. Lets say on the contrary, taxi total segment turnover not decreased, 
+it remained stable or maybe increased. So here we should check taxi companies' turnover separately. 
+If our partner total turnover decreased it also can be enough argument- total turnover decreased--
+it means activity decreased-- and it is so normal that earn and burn decreased as well. 
+Lets say it also stable or increased. Only after those results we should check bonus campaigns- were campaigns massive or segmented?
+If segmented, which segments covered, why underperformed? What was the communication canals- push or pop up or sms..?
+
+Review
+
+Strong points
+1. The earn-and-burn-together heuristic is genuinely useful. 
+Separating "only burn dropped" (points to a spending-side constraint like low balance) from "both dropped together" 
+(points to something upstream, shared by both) is a real diagnostic distinction. Most people wouldn't think to split it this way.
+
+2. Turnover-before-campaign ordering respects base rates. 
+Checking whether the underlying business activity moved before blaming a specific program is the correct instinct — 
+campaigns are usually the last thing to check, not the first, because they're a small lever on a big base.
+
+3. YoY comparison operationalizes "seasonality" instead of leaving it as a vague guess. 
+Turning a hypothesis into a testable prediction (if seasonal, last year should show the same pattern) is good methodology.
+
+4. Partner-level breakdown before mechanism-level hypothesis is the right way to narrow 
+the population before you start guessing at causes within it.
+
+Weak points / gaps
+1. This is the important one — you may be falling into the same trap you flagged in your churn/reactivation example. 
+Ask yourself: does this month's burn draw on this month's earn, or on an accumulated bonus balance built up over previous months? 
+If it's a stock, not a same-month flow, then "earn and burn dropped in the same month" 
+could be two loosely-related things coinciding — not evidence of one shared upstream cause. 
+You'd want to check the lag structure (does last month's earn predict this month's burn?) 
+before treating co-movement as proof of a common driver. 
+Right now your own framework has a blind spot for the exact pattern you started this conversation with.
+
+2. "Only burn dropped → it's general, not segment-specific" is too strong a rule. 
+Low balance could itself be taxi-specific (e.g., taxi's earn rate, minimum redemption threshold,
+ or catalog eligibility could differ from other segments). A single-metric move doesn't cleanly separate general vs. segment causes
+ — you'd still need to check whether the balance drop is concentrated in taxi users specifically.
+
+3. "Total turnover" is one aggregate number hiding several possible mechanisms. Even if you confirm turnover dropped,
+ you don't yet know why: fewer active users, lower trip frequency, or lower average fare each imply different fixes. 
+Decompose turnover into active users × frequency × average fare before concluding "activity dropped, case closed."
+
+4. One year of YoY comparison is a thin seasonality test. 
+A single prior-year data point can't distinguish real seasonality from last year's own one-off noise. 
+Ideally you'd want 2-3 years, or at least check for calendar effects (holiday shifts, weekend count differences)
+ rather than relying on a same-month label alone.
+
+5. You don't split supply vs. demand. "Partner turnover dropped" could mean existing partners transacted less 
+(demand-side, or partner-specific issue) or that fewer partners were active in the pool at all (supply-side — onboarding/offboarding).
+ Same turnover number, different fix.
+
+6. Missing bucket: external/behavioral factors sit between your "turnover" step and your "campaign" step, not after it. 
+Competitor promotions, regulatory changes, price changes, or weather could explain a turnover drop without it being seasonal,
+ partner-specific, or campaign-related — worth its own checkpoint before you conclude it's seasonality or partner-driven.
+
+7. When you get to campaign analysis, add a counterfactual. "Was it massive or segmented, which channels" is good,
+ but you also want a comparison group — users/segments exposed to the campaign change vs. not — and a timing check
+(did the metric drop align exactly with when campaign parameters changed), not just a qualitative read of what the campaign looked like.
+
+The core skeleton — activity level → decompose the population → external factors → mechanism — is right.
+The main thing I'd fix before using this as a template across your other 9 cases is 
+#1: build in an explicit check for whether the two metrics you're comparing are even same-period comparable, 
+since that's the exact trap you were describing at the start.
