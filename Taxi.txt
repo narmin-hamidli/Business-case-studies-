@@ -1,4 +1,4 @@
-Case
+Case (by Claude)
 
 Taxi segment — bonus earn/burn
 Total bonus earn and burn across the platform dropped 15% month-over-month. 
@@ -8,7 +8,7 @@ Taxi is one of several verticals (food delivery, grocery, micromobility) sharing
 Question: is the taxi campaign really the driver, or could this be a segment-mix, seasonality, or total-turnover effect? 
 What would you check first, second, third?
 
-Answer
+Answer (by narmin-hamidli)
 
 1- Firstly, if taxi segment earn and burn both decrease at the same time it shows
 there is problem on taxi segment itself. 
@@ -27,7 +27,7 @@ Lets say it also stable or increased. Only after those results we should check b
 were campaigns massive or segmented?
 If segmented, which segments covered, why underperformed? What was the communication canals- push or pop up or sms..?
 
-Review
+Review (by Claude)
 
 Strong points
 1. The earn-and-burn-together heuristic is genuinely useful. 
