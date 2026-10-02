@@ -1,0 +1,75 @@
+Case (by Claude)
+
+Subscription/SaaS — churn and NPS
+
+Monthly churn fell from 4.5% to 3.2% in the same period NPS rose from +18 to +31. 
+Leadership concludes "the NPS improvement is why churn dropped."
+Question: what timing, survivorship, and cohort issues would make this a premature conclusion? 
+What's the actual sequence you'd expect between an NPS-driving change and a churn change?-
+
+Answer (by narmin-hamidli)
+
+Firstly, we need to make clear that, current month NPS and current month churn rate not affected from each other.
+Because if people have low satisfaction rate during last month in this case they will be churn this month. 
+Here we can analyze if previous month customers with low satisfaction rate is same same pool with current month's churners.
+Vice versa, the lets say churn rate drop and NPS increase are correlated with each other and start analyze from this way. 
+So, i would analyze NPS of previous months and current month. 
+What are the complaints of customers from previous months and which ones already solved and we can't see same complaints any more. 
+And most probably this "already solved" problems cause people stay on product and don't churn. 
+Secondly, we should analyze if they don't have root-cause relation. Here can be several factors:
+Maybe churn decreased because of seasonality - it is busy season and people don't end their subscription on their will. 
+In this case we will check previous years' customers' behavior. 
+Then we should check if there had been any campaign or communication in order to reactivate customers.  
+We should check communicated segments and reactivated customers. 
+There can be any new feature. We should check users of this new feature and their proportion on their current month customer base. 
+
+
+
+Review (by Claude)
+
+Strong points
+
+1. Grounding the hypothesis in actual complaint content, not just the aggregate score. 
+Checking which specific complaints disappeared from NPS verbatims and 
+proposing that fixes to those issues are what's keeping people around is a reasonable attempt to find a mechanism, not just point at a number.
+
+2. You correctly go looking for alternative explanations rather than stopping at the stakeholder's story. 
+Seasonality, reactivation campaigns, and new feature adoption are all legitimate competing explanations, 
+and checking seasonality against prior years' data reuses a habit you applied well in the taxi case.
+
+3. The feature-adoption check (proportion of current base using it) is a sound first step toward 
+testing whether a specific product change could plausibly account for a churn shift of this size.
+
+
+Weak points / gaps
+
+1. Survivorship bias is missing, and it's probably the single biggest risk here. 
+NPS surveys are typically sent to currently active customers. 
+If churn fell, the surviving customer pool this month mechanically contains more of the people who would have churned in a normal month but didn't (for any reason)
+ — and if dissatisfied customers already left in earlier cycles, the remaining population is satisfied by composition, not because anyone's sentiment actually improved.
+ This raises a real possibility you haven't considered: falling churn could be causing the NPS rise, 
+not the other way around — exactly the reverse of what leadership concluded. You'd want to check whether NPS respondent composition shifted 
+(are you surveying a different mix of tenure/plan customers than before?) and whether low-churn months historically also show NPS bumps for this same mechanical reason.
+
+2. Cohort composition is also unaddressed. 
+If a wave of new customers (who are both happier and less likely to churn in an early honeymoon period) 
+are diluting the base, or if a historically high-churn cohort recently rolled off, both metrics would move together without any causal link between them
+ — the same mix-shift logic you applied well in the e-commerce case (new/retained customer segmentation) but didn't transfer here. 
+Worth checking NPS and churn broken out by cohort (signup vintage, plan tier, acquisition channel) before trusting the blended number.
+
+3. Starting from "assume the correlation is causal and go find supporting evidence" risks confirmation bias. 
+Hunting for which complaints disappeared is naturally going to surface something — product teams resolve complaints every month as routine work
+ — so this approach can "confirm" almost any month's churn change after the fact. 
+A stronger test would compare churn specifically among customers who filed those particular complaints vs. 
+those who didn't, before and after the fix shipped, rather than a general narrative match. 
+This step belongs after you've ruled out the lag/survivorship/cohort explanations, not before.
+
+4. No magnitude check. Even if seasonality, campaigns, and the new feature are all real contributors, 
+you haven't proposed how you'd quantify how much of the 4.5%→3.2% drop each one explains — without that, 
+you can confirm several plausible stories are "present" while still not knowing if they're sufficient, 
+or if a large unexplained residual remains.
+
+5. The feature-adoption check needs a comparison group, not just a proportion. 
+Knowing what % of the base uses the new feature doesn't tell you much by itself
+ — you'd want churn rate among adopters vs. non-adopters, and ideally some adjustment for the fact that people
+ who adopt new features early are often inherently lower-churn, engaged power users regardless of the feature itself (a selection effect, not a treatment effect).
